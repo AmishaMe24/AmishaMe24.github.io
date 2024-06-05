@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
+import logo from '../../assets/logo.png';
 
 const Navbar = () => {
     // State to manage the navbar's visibility
@@ -19,16 +20,16 @@ const Navbar = () => {
     ];
 
     return (
-        <div className='bg-white flex justify-between items-center h-24 w-full mx-auto px-4 text-black'>
+        <div className='bg-white flex justify-between items-center h-20 w-full pr-4 text-black'>
             {/* Logo */}
-            <h1 className='w-full text-3xl font-bold text-[#00df9a]'>REACT.</h1>
+            <img src={logo} alt="Amisha Mehta" className='ml-[-20px] md:ml-[-10px] w-[150px] h-[150px]' />
 
             {/* Desktop Navigation */}
-            <ul className='hidden md:flex'>
+            <ul className='hidden md:flex' style={{ paddingRight: '80px' }}>
                 {navItems.map(item => (
                     <li
                         key={item.id}
-                        className='p-4 hover:bg-[#00df9a] rounded-xl m-2 cursor-pointer duration-300 hover:text-black'
+                        className='mx-4 px-3 py-2 rounded-lg hover:bg-gray-100 hover:text-gray-900 cursor-pointer transition duration-300'
                     >
                         {item.text}
                     </li>
@@ -37,25 +38,25 @@ const Navbar = () => {
 
             {/* Mobile Navigation Icon */}
             <div onClick={handleNav} className='block md:hidden'>
-                {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
+                {nav ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={25} />}
             </div>
 
             {/* Mobile Navigation Menu */}
             <ul
                 className={
                     nav
-                        ? 'fixed md:hidden left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500'
-                        : 'ease-in-out w-[60%] duration-500 fixed top-0 bottom-0 left-[-100%]'
+                        ? 'fixed md:hidden left-0 top-0 w-[60%] h-full border-r border-gray-200 bg-white text-black shadow-lg ease-in-out duration-500'
+                        : 'ease-in-out w-[60%] duration-500 fixed h-full top-0 bottom-0 left-[-100%]'
                 }
             >
                 {/* Mobile Logo */}
-                <h1 className='w-full text-3xl font-bold text-[#00df9a] m-4'>REACT.</h1>
+                <img src={logo} alt="Amisha Mehta" style={{ width: "150px", height: "150px", margin: "-30px" }} />
 
                 {/* Mobile Navigation Items */}
                 {navItems.map(item => (
                     <li
                         key={item.id}
-                        className='p-4 border-b rounded-xl hover:bg-[#00df9a] duration-300 hover:text-black cursor-pointer border-gray-600'
+                        className='m-2 px-3 py-2 border-b border-gray-200 rounded-lg hover:bg-gray-100 hover:text-gray-900 cursor-pointer transition duration-300'
                     >
                         {item.text}
                     </li>
