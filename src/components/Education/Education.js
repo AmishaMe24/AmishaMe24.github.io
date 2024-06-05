@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import education_img from '../../assets/education.gif';
+import './Education.css';
 
 const Education = () => {
     const [isAccordion1Open, setIsAccordion1Open] = useState(true);
@@ -23,18 +23,17 @@ const Education = () => {
     };
 
     return (
-        <div className=""
-            style={{ backgroundImage: `url(${education_img})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right'}}>
+        <div className="education">
             <div className='flex items-center flex-col'>
                 <h1 className='text-4xl md:text-5xl text-center pt-10'>Education</h1>
                 <div className="max-w-xl md:max-w-4xl p-10">
-                    <div id="accordion-color" data-accordion="collapse" data-active-classes="bg-blue-100 text-blue-600">
+                    <div id="accordion-color" data-accordion="collapse" data-active-classes="bg-[#C7CFFF] text-blue-600">
                         <h2 id="accordion-color-heading-1">
                             <button
                                 type="button"
                                 className={`flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 
-                            border border-gray-200 rounded-t-xl focus:ring-4 focus:ring-blue-200 hover:bg-blue-100 gap-3
-                            ${isAccordion1Open ? 'bg-blue-100 text-blue-600' : ''}`}
+                            border border-gray-200 rounded-t-xl focus:ring-4 focus:ring-blue-200 hover:bg-[#C7CFFF] gap-3
+                            ${isAccordion1Open ? 'bg-[#C7CFFF] text-blue-600' : ''}`}
                                 onClick={toggleAccordion1}
                                 aria-expanded={isAccordion1Open}
                                 aria-controls="accordion-color-body-1"
@@ -77,13 +76,13 @@ const Education = () => {
                         </div>
                     </div>
 
-                    <div id="accordion-color" data-accordion="collapse" data-active-classes="bg-blue-100 text-blue-600" className='pt-10'>
+                    <div id="accordion-color" data-accordion="collapse" data-active-classes="bg-[#C7CFFF] text-blue-600" className='pt-10'>
                         <h2 id="accordion-color-heading-2">
                             <button
                                 type="button"
                                 className={`flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 
-                            border border-gray-200 rounded-t-xl focus:ring-4 focus:ring-blue-200 hover:bg-blue-100 gap-3
-                            ${isAccordion2Open ? 'bg-blue-100 text-blue-600' : ''}`}
+                            border border-gray-200 rounded-t-xl focus:ring-4 focus:ring-blue-200 hover:bg-[#C7CFFF] gap-3
+                            ${isAccordion2Open ? 'bg-[#C7CFFF] text-blue-600' : ''}`}
                                 onClick={toggleAccordion2}
                                 aria-expanded={isAccordion2Open}
                                 aria-controls="accordion-color-body-2"
@@ -128,7 +127,6 @@ const Education = () => {
                 </div>
             </div>
         </div>
-
     );
 };
 

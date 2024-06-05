@@ -1,0 +1,13 @@
+.education {
+  background-image: url("../../assets/education.gif");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 420px;
+  background-position-y: center;
+}
+
+@media (max-width: 768px) {
+  .education {
+    background-image: none;
+  }
+}

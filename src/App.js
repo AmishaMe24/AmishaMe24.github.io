@@ -8,13 +8,11 @@ import Education from './components/Education/Education';
 function App() {
   return (
     <div className='App'>
-      <div>
-        <Navbar></Navbar>
-      </div>
-      <Home></Home>
-      <About></About>
-      <Education></Education>
-      <Experience></Experience>
+      <Navbar />
+      <div id="home"><Home /></div>
+      <div id="about"><About /></div>
+      <div id="education"><Education /></div>
+      <div id="experience"><Experience /></div>
     </div>
   );
 }

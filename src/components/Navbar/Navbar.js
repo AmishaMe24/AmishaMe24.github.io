@@ -1,38 +1,73 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import logo from '../../assets/logo.png';
 
 const Navbar = () => {
-    // State to manage the navbar's visibility
     const [nav, setNav] = useState(false);
+    const [activeSection, setActiveSection] = useState('');
 
-    // Toggle function to handle the navbar's display
     const handleNav = () => {
         setNav(!nav);
     };
 
-    // Array containing navigation items
     const navItems = [
-        { id: 1, text: 'Home' },
-        { id: 2, text: 'About' },
-        { id: 3, text: 'Projects' },
-        { id: 4, text: 'Contact' },
+        { id: 1, text: 'Home', path: 'home' },
+        { id: 2, text: 'About', path: 'about' },
+        { id: 3, text: 'Education', path: 'education' },
+        { id: 4, text: 'Experience', path: 'experience' },
     ];
 
+    useEffect(() => {
+        const handleScroll = (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setActiveSection(entry.target.id);
+                }
+            });
+        };
+
+        const options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.5,
+        };
+
+        const observer = new IntersectionObserver(handleScroll, options);
+        
+        navItems.forEach(item => {
+            const section = document.getElementById(item.path);
+            if (section) {
+                observer.observe(section);
+            }
+        });
+
+        return () => {
+            navItems.forEach(item => {
+                const section = document.getElementById(item.path);
+                if (section) {
+                    observer.unobserve(section);
+                }
+            });
+        };
+    }, [navItems]);
+
     return (
-        <div className='bg-white flex justify-between items-center h-20 w-full pr-4 text-black'>
+        <div className='bg-white fixed top-0 left-0 w-full flex justify-between items-center h-20 pr-4 text-black z-50 shadow-md'>
             {/* Logo */}
             <img src={logo} alt="Amisha Mehta" className='ml-[-20px] md:ml-[-10px] w-[150px] h-[150px]' />
 
             {/* Desktop Navigation */}
             <ul className='hidden md:flex' style={{ paddingRight: '80px' }}>
                 {navItems.map(item => (
-                    <li
+                    <a
                         key={item.id}
-                        className='mx-4 px-3 py-2 rounded-lg hover:bg-gray-100 hover:text-gray-900 cursor-pointer transition duration-300'
+                        href={`#${item.path}`}
+                        className={`mx-4 px-3 py-2 rounded-lg hover:bg-gray-100 hover:text-gray-900 cursor-pointer transition duration-300 ${
+                            activeSection === item.path ? 'bg-gray-100 text-gray-900' : ''
+                        }`}
                     >
                         {item.text}
-                    </li>
+                    </a>
                 ))}
             </ul>
 
@@ -54,12 +89,14 @@ const Navbar = () => {
 
                 {/* Mobile Navigation Items */}
                 {navItems.map(item => (
-                    <li
+                    <a
                         key={item.id}
+                        href={`#${item.path}`}
                         className='m-2 px-3 py-2 border-b border-gray-200 rounded-lg hover:bg-gray-100 hover:text-gray-900 cursor-pointer transition duration-300'
+                        onClick={handleNav} // Close the menu when an item is clicked
                     >
                         {item.text}
-                    </li>
+                    </a>
                 ))}
             </ul>
         </div>

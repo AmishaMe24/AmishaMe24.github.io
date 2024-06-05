@@ -1,0 +1,17 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  margin-top: 80px; /* Adjust this value based on the height of your navbar */
+}
+
+/* Optionally, if you have other global styles */
+* {
+  box-sizing: border-box;
+}
