@@ -33,7 +33,7 @@ const Navbar = () => {
         };
 
         const observer = new IntersectionObserver(handleScroll, options);
-        
+
         navItems.forEach(item => {
             const section = document.getElementById(item.path);
             if (section) {
@@ -62,9 +62,8 @@ const Navbar = () => {
                     <a
                         key={item.id}
                         href={`#${item.path}`}
-                        className={`mx-4 px-3 py-2 rounded-lg hover:bg-gray-100 hover:text-gray-900 cursor-pointer transition duration-300 ${
-                            activeSection === item.path ? 'bg-gray-100 text-gray-900' : ''
-                        }`}
+                        className={`mx-4 px-3 py-2 rounded-lg hover:bg-gray-100 hover:text-gray-900 cursor-pointer transition duration-300 ${activeSection === item.path ? 'bg-gray-100 text-gray-900' : ''
+                            }`}
                     >
                         {item.text}
                     </a>
@@ -89,14 +88,18 @@ const Navbar = () => {
 
                 {/* Mobile Navigation Items */}
                 {navItems.map(item => (
-                    <a
+                    <li
                         key={item.id}
-                        href={`#${item.path}`}
                         className='m-2 px-3 py-2 border-b border-gray-200 rounded-lg hover:bg-gray-100 hover:text-gray-900 cursor-pointer transition duration-300'
-                        onClick={handleNav} // Close the menu when an item is clicked
                     >
-                        {item.text}
-                    </a>
+                        <a
+                            key={`link-${item.id}`}
+                            href={`#${item.path}`}
+                            onClick={handleNav}
+                        >
+                            {item.text}
+                        </a>
+                    </li>
                 ))}
             </ul>
         </div>

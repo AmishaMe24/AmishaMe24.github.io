@@ -1,9 +1,8 @@
 import profile_img from "../../assets/profile-photo.png";
 import './About.css';
-import { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 const About = () => {
-
     return (
         <div className="about-container">
             <div className="about-img-container">
@@ -22,7 +21,7 @@ const About = () => {
                     development and machine learning.
                 </p>
                 <button className="bg-[#7685d6] hover:bg-[#7685d6]-400 text-white py-2 px-4 mt-6 rounded inline-flex items-center"
-                    onClick={(e) => { window.open("https://drive.google.com/file/d/1tAcByzOhCA0095GOoCnmqb9tGXdBkxXg/view?usp=sharing", "_blank"); }}>
+                    onClick={() => { window.open("https://drive.google.com/file/d/1tAcByzOhCA0095GOoCnmqb9tGXdBkxXg/view?usp=sharing", "_blank"); }}>
                     <svg className="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" /></svg>
                     <span>Download Resume</span>
                 </button>
