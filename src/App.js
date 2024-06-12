@@ -6,6 +6,8 @@ import Experience from './components/Experience/Experience';
 import Education from './components/Education/Education';
 import Skills from './components/Skills/Skills';
 import Project from './components/Project/Project';
+import Footer from './components/Footer/Footer';
+import Contact from './components/Contact/Contact';
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
       <div id="education"><Education /></div>
       <div id="experience"><Experience /></div>
       <div id="projects"><Project /></div>
+      {/* <Contact /> */}
+      <Footer />
     </div>
   );
 }

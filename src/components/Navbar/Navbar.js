@@ -15,6 +15,7 @@ const Navbar = () => {
         { id: 2, text: 'About', path: 'about' },
         { id: 3, text: 'Education', path: 'education' },
         { id: 4, text: 'Experience', path: 'experience' },
+        { id: 5, text: 'Projects', path: 'projects'}
     ];
 
     useEffect(() => {

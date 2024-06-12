@@ -46,7 +46,7 @@ const Project = () => {
                                 <a href={project.link}>
                                     <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">{project.title}</h5>
                                 </a>
-                                <p className="mb-3 font-normal text-gray-700">{project.description}</p>
+                                <p className="mb-3 font-normal text-gray-700 text-justify">{project.description}</p>
                                 <a href={project.link} className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#7685d6] rounded-lg hover:bg-[#6E7DCE] focus:ring-4 focus:outline-none focus:ring-blue-300">
                                     View On GitHub
                                     <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
@@ -54,7 +54,7 @@ const Project = () => {
                                     </svg>
                                 </a>
 
-                                <div className="mt-3 flex flex-wrap gap-2">
+                                <div className="mt-4 flex flex-wrap gap-2">
                                     {project.technologiesUsed.map((tech, techIndex) => (
                                         <span key={techIndex} className={`text-xs font-medium px-2.5 py-0.5 rounded ${badgeColor[techIndex]}`}>
                                             {tech}
