@@ -3,15 +3,13 @@ html {
 }
 
 body {
-  margin: 0;
-  padding: 0;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .App {
-  margin-top: 80px; /* Adjust this value based on the height of your navbar */
+  margin-top: 80px;
 }
 
-/* Optionally, if you have other global styles */
 * {
   box-sizing: border-box;
 }

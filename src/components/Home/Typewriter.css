@@ -3,10 +3,6 @@
   overflow-wrap: break-word;
 }
 
-.typewriter {
-  font-family: sans-serif;
-}
-
 .typewriter-text {
   color: #ffe509;
   border-right: solid #ffe509 7px;
@@ -26,12 +22,12 @@
 
 @media (max-width: 767.98px) {
   .typewriter {
-    font-size: 25px;
+    font-size: 24px;
   }
 }
 
 @media (min-width: 768px) {
   .typewriter {
-    font-size: 40px;
+    font-size: 36px;
   }
 }

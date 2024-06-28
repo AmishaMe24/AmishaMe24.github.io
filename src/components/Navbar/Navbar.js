@@ -5,6 +5,7 @@ import logo from '../../assets/logo.png';
 const Navbar = () => {
     const [nav, setNav] = useState(false);
     const [activeSection, setActiveSection] = useState('');
+    const [scrolledPastHome, setScrolledPastHome] = useState(false);
 
     const handleNav = () => {
         setNav(!nav);
@@ -23,6 +24,11 @@ const Navbar = () => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     setActiveSection(entry.target.id);
+                    if (entry.target.id === 'home') {
+                        setScrolledPastHome(false);
+                    } else {
+                        setScrolledPastHome(true);
+                    }
                 }
             });
         };
@@ -53,7 +59,7 @@ const Navbar = () => {
     }, [navItems]);
 
     return (
-        <div className='bg-white fixed top-0 left-0 w-full flex justify-between items-center h-20 pr-4 text-black z-50 shadow-md'>
+        <div className={`bg-white fixed top-0 left-0 w-full flex justify-between items-center h-[4rem] pr-4 text-black z-50 ${scrolledPastHome ? 'shadow-md' : ''}`}>
             {/* Logo */}
             <img src={logo} alt="Amisha Mehta" className='ml-[-20px] md:ml-[-10px] w-[150px] h-[150px]' />
 
