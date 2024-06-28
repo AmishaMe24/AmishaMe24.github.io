@@ -18,7 +18,7 @@ function App() {
       <div id="education"><Education /></div>
       <div id="experience"><Experience /></div>
       <div id="projects"><Project /></div>
-      {/* <Contact /> */}
+      <Contact />
       <Footer />
     </div>
   );
