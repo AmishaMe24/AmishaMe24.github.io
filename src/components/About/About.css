@@ -3,20 +3,17 @@
   flex-direction: row;
   align-items: center;
   overflow: hidden;
-  animation: fadeIn 1s ease-in-out;
 }
 
 .about-img-container {
   flex: 1;
   display: flex;
   justify-content: center;
-  animation: slideInLeft 1s ease-in-out;
 }
 
 .about-text-container {
   flex: 1;
   padding: 20px;
-  animation: slideInRight 1s ease-in-out;
 }
 
 @media (max-width: 768px) {
@@ -39,33 +36,6 @@
   width: auto;
   height: auto;
   text-align: justify;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInRight {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(0);
-  }
 }
 
 button {

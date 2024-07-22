@@ -8,6 +8,10 @@ import Skills from './components/Skills/Skills';
 import Project from './components/Project/Project';
 import Footer from './components/Footer/Footer';
 import Contact from './components/Contact/Contact';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+
+library.add(fab);
 
 function App() {
   return (
@@ -17,6 +21,7 @@ function App() {
       <div id="about"><About /></div>
       <div id="education"><Education /></div>
       <div id="experience"><Experience /></div>
+      <div id="skills"><Skills /></div>
       <div id="projects"><Project /></div>
       <Contact />
       <Footer />
